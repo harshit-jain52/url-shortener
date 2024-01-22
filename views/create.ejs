@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+
+  <body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="create-url">
+      <form action="/" method="POST">
+        <label for="origUrl">Original URL:</label>
+        <input type="url" id="origUrl" name="origUrl" required />
+        <label for="shortUrl">Custom Short URL:</label>
+        <input
+          type="text"
+          id="shortUrl"
+          name="shortUrl"
+          pattern="[a-zA-Z0-9_]{5,}"
+          title="Invalid input"
+          required
+        />
+        <button>Create</button>
+      </form>
+    </div>
+
+    <div class="message">
+      <p><%=message%></p>
+    </div>
+  </body>
+</html>
