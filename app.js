@@ -14,8 +14,9 @@ mongoose
 // register view engines
 app.set("view engine", "ejs");
 
-// middleware
+// middleware & static files
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 // routes
 app.get("/", (req, res) => {
@@ -32,9 +33,14 @@ app.post("/", (req, res) => {
           message: "Entered Short URL already exists",
         });
       } else {
-        url.save().then((result) => {
-          res.redirect("/done");
-        });
+        url
+          .save()
+          .then((result) => {
+            res.redirect("/done");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     })
     .catch((err) => {
