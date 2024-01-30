@@ -61,18 +61,14 @@ app.get("/done", (req, res) => {
   res.render("done", { title: "Create" });
 });
 
-app.use((req, res) => {
-  const short = req.url.slice(1);
+app.get("/:short", (req, res) => {
+  const short = req.params.short;
   Url.find({ shortUrl: short })
     .then((result) => {
-      if (result.length == 0) {
-        res.status(404).render("404", { title: "404" });
-      } else {
-        res.redirect(result[0].origUrl);
-      }
+      res.redirect(result[0].origUrl);
     })
     .catch((err) => {
       console.log(err);
-      res.redirect("/");
+      res.status(404).render("404", { title: "404" });
     });
 });

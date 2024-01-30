@@ -110,3 +110,9 @@ nav ul li {
   margin: 20px;
   font-size: 40px;
 }
+
+.not-found p {
+  color: #a81616;
+  margin: 20px;
+  font-size: 40px;
+}
