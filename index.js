@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const mongoose = require("mongoose");
 const Url = require("./models/url");
 const dotenv = require("dotenv");
@@ -14,6 +15,7 @@ mongoose
 // register view engines
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // middleware & static files
 app.use(express.urlencoded({ extended: true }));
