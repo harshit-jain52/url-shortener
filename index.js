@@ -19,7 +19,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // middleware & static files
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // routes
 app.get("/", (req, res) => {
