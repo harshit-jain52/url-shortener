@@ -12,6 +12,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // register view engines
+app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
 // middleware & static files
