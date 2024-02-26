@@ -56,8 +56,8 @@ app.get("/create", (req, res) => {
   res.render("create", { title: "Create", message: "Create a new Short URL" });
 });
 
-app.get("/about", (req, res) => {
-  res.redirect("https://harshit-jain52.github.io/");
+app.get("/repo", (req, res) => {
+  res.redirect("https://github.com/harshit-jain52/url-shortener");
 });
 
 app.get("/done", (req, res) => {
