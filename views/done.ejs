@@ -5,9 +5,9 @@
   <body>
     <%- include('./partials/nav.ejs') %>
 
-    <div class="success"><p>URL Created Successfully</p</div>
+    <div class="success"><p>Short URL Created Successfully</p</div>
     <div class="copy">
-      <button>Copy URL</button>
+      <button>Copy Shortened URL</button>
     </div>
   </body>
 
@@ -16,10 +16,10 @@
 
     copyBtn.addEventListener('click', e=>{
       navigator.clipboard.writeText("<%= shortUrl%>");
-      copyBtn.innerText="Copied to Clipboard";
+      copyBtn.innerText="URL Copied to Clipboard";
       setTimeout(function (){
-        copyBtn.innerText="Copy URL";
-      },1000, copyBtn)
+        copyBtn.innerText="Copy Shortened URL";
+      },1200, copyBtn)
     })
   </script>
 </html>

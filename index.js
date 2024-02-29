@@ -62,7 +62,7 @@ app.get("/repo", (req, res) => {
 
 app.get("/done", (req, res) => {
   res.render("done", {
-    title: "Create",
+    title: "Success",
     shortUrl: `${req.hostname}/${req.query.shortUrl}`,
   });
 });

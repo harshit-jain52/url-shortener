@@ -116,3 +116,14 @@ nav ul li {
   margin: 20px;
   font-size: 40px;
 }
+
+.copy button {
+  background: rgb(59, 16, 59);
+  color: lavender;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  padding: 6px;
+  border: 2px solid #ee7752;
+  border-radius: 10px;
+  cursor: copy;
+}
