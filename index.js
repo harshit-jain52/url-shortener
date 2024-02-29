@@ -39,7 +39,7 @@ app.post("/", (req, res) => {
         url
           .save()
           .then((result) => {
-            res.redirect("/done");
+            res.redirect("/done?shortUrl=" + encodeURIComponent(url.shortUrl));
           })
           .catch((err) => {
             console.log(err);
@@ -61,7 +61,10 @@ app.get("/repo", (req, res) => {
 });
 
 app.get("/done", (req, res) => {
-  res.render("done", { title: "Create" });
+  res.render("done", {
+    title: "Create",
+    shortUrl: `${req.hostname}/${req.query.shortUrl}`,
+  });
 });
 
 app.get("/:short", (req, res) => {
