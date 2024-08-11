@@ -1,2 +1,4 @@
-## Install Depeendencies
+## URL Shortener
+
+### Install Dependencies
 `npm install`
